@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       {/* 프로젝트 아이콘 */}
       <link rel="icon" href="/food0.png" />
-      <body className={inter.className}>
+      <body>
         {children}
         <MacDock></MacDock>
       </body>

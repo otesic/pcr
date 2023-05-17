@@ -15,13 +15,18 @@ import { useRouter } from "next/navigation";
 interface DockCardProps {
   children: React.ReactNode;
   src: string;
-  number: boolean;
-  getData: any;
+  chatBot: boolean;
+  chatBotHandler: (chatBot: boolean) => void;
 }
 
 const INITIAL_WIDTH = 48;
 
-export const DockCard = ({ children, src, number, getData }: DockCardProps) => {
+export const DockCard = ({
+  children,
+  src,
+  chatBot,
+  chatBotHandler,
+}: DockCardProps) => {
   const cardRef = React.useRef<HTMLButtonElement>(null!);
   /**
    * This doesn't need to be real time, think of it as a static
@@ -88,9 +93,6 @@ export const DockCard = ({ children, src, number, getData }: DockCardProps) => {
   const isAnimating = React.useRef(false);
   const router = useRouter();
 
-  const [chatBotToggle, setChatBotToggle] = React.useState<boolean>(false);
-  // console.log(chatBotToggle);
-
   // macDock 네비게이트 함수
   const handleClick = () => {
     if (src == "home") {
@@ -113,12 +115,13 @@ export const DockCard = ({ children, src, number, getData }: DockCardProps) => {
       setTimeout(() => {
         router.push("/finalMent");
       }, 2000);
+    } else if (src == "project") {
+      setTimeout(() => {
+        router.push("/project");
+      }, 2000);
     } else if (src == "chatBot") {
       setTimeout(() => {
-        // router.push("/chatBot");
-        // setChatBotToggle(true);
-        // console.log(number);
-        getData(true);
+        chatBotHandler(!chatBot);
       }, 2000);
     }
 
@@ -136,7 +139,7 @@ export const DockCard = ({ children, src, number, getData }: DockCardProps) => {
               y.set(0);
               isAnimating.current = false;
               timeoutRef.current = undefined;
-            }, 2000);
+            }, 1000);
             y.stop();
           }
           return { reverse: true };
