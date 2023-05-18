@@ -5,6 +5,7 @@ import useMeasure from "react-use-measure";
 import * as Icons from "./icons";
 import { styled } from "styled-components";
 import { animated } from "@react-spring/web";
+import { useRouter } from "next/navigation";
 
 function usePrevious<T>(value: T) {
   const ref = useRef<T>();
@@ -68,6 +69,7 @@ const Tree = React.memo<
 });
 
 const Skills = () => {
+  const router = useRouter();
   return (
     <Container>
       <InnerContainer>
@@ -231,9 +233,11 @@ const Skills = () => {
               <br />
               3D 렌더링 사진을 감상할 수 있도록 활용했습니다.
             </span>
+            <br />
           </Tree>
           <Tree name="pdf 출력">
             <span>현재의 화면을 image 또는 pdf로 활용 가능합니다.</span>
+            <button onClick={() => router.push("/")}>보러가기</button>
           </Tree>
           <Tree name="OAuth">
             <span>소셜 로그인이 가능 하도록 사용했습니다.</span>
@@ -248,6 +252,12 @@ const Skills = () => {
           <Tree name="Kakao API">
             <span>Map, Login 등 여러가지를 사용했습니다.</span>
           </Tree>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={() => router.push("/canSkills")}
+          >
+            기술 보러가기
+          </button>
         </Tree>
       </InnerContainer>
     </Container>

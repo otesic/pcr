@@ -141,7 +141,10 @@ const OpenAi = () => {
             onClick={submitQuestion}
             disabled={waitAnswer}
           >
-            전송
+            <img
+              className="w-8 h-8 "
+              src="	https://img.icons8.com/?size=512&id=43190&format=png"
+            />
           </button>
         )}
       </div>
