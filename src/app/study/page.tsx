@@ -1,6 +1,6 @@
 import React from "react";
 import NaviTest from "../../components/naviTest/NaviTest";
-import SpringTest from "../../components/ReactSpringTest/SpringTest";
+import SpringTest from "../../components/TEST/ReactSpringTest/SpringTest";
 
 const page = () => {
   return (
