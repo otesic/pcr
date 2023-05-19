@@ -11,22 +11,19 @@ import { useWindowResize } from "../hooks/useWindowResize";
 import styles from "./styles.module.scss";
 import { useDock } from "../dock/dockCentext";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/GlobalState/store";
+import { onChat } from "@/app/GlobalState/Features/ChatBot/chatSlice";
 
 interface DockCardProps {
   children: React.ReactNode;
   src: string;
-  chatBot: boolean;
-  chatBotHandler: (chatBot: boolean) => void;
 }
 
 const INITIAL_WIDTH = 48;
 
-export const DockCard = ({
-  children,
-  src,
-  chatBot,
-  chatBotHandler,
-}: DockCardProps) => {
+export const DockCard = ({ children, src }: DockCardProps) => {
   const cardRef = React.useRef<HTMLButtonElement>(null!);
   /**
    * This doesn't need to be real time, think of it as a static
@@ -91,7 +88,13 @@ export const DockCard = ({
   const timesLooped = React.useRef(0);
   const timeoutRef = React.useRef<any>();
   const isAnimating = React.useRef(false);
+
+  // 경로 이동 router
   const router = useRouter();
+
+  //  Redux에서 기본값 false인 chatBot state 값 가져와서 바꿔주기
+  const dispatch = useDispatch();
+  const onOff = useSelector((state: RootState) => state.chatBotReducer.vlaue);
 
   // macDock 네비게이트 함수
   const handleClick = () => {
@@ -121,7 +124,7 @@ export const DockCard = ({
       }, 2000);
     } else if (src == "chatBot") {
       setTimeout(() => {
-        chatBotHandler(!chatBot);
+        dispatch(onChat(!onOff));
       }, 2000);
     }
 

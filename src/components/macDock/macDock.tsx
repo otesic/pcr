@@ -6,6 +6,8 @@ import { DockCard } from "@/components/macDock/dockCard/dockCard";
 import { Card } from "@/components/macDock/card/card";
 import { DockDivider } from "@/components/macDock/dockDivider/dockDivider";
 import OpenAi from "../openAi/openAi";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/GlobalState/store";
 
 const ICONS = [
   {
@@ -45,24 +47,15 @@ const ICONS = [
   ,
 ];
 const MacDock = () => {
-  // 리덕스 대신 state와 함수를 프롭스로 넘겨서 전달 받고 챗봇 띄워줌
-  const [chatBot, setChatBot] = React.useState<boolean>(false);
-
-  const chatBotHandler = (chatBot: boolean) => {
-    setChatBot(chatBot);
-  };
+  // 리덕스 state로 OpenAI on off
+  const onChat = useSelector((state: RootState) => state.chatBotReducer.vlaue);
 
   return (
     <div>
       <Dock>
         {ICONS.map((src, index) =>
           src ? (
-            <DockCard
-              src={src.name}
-              key={src.name}
-              chatBot={chatBot}
-              chatBotHandler={chatBotHandler}
-            >
+            <DockCard src={src.name} key={src.name}>
               <Card src={src.url} />
             </DockCard>
           ) : (
@@ -70,7 +63,7 @@ const MacDock = () => {
           )
         )}
       </Dock>
-      {chatBot === true ? <OpenAi /> : <></>}
+      {onChat === true ? <OpenAi /> : <></>}
     </div>
   );
 };

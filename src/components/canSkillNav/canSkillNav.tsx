@@ -1,13 +1,9 @@
 "use client";
-import { RootState } from "@/app/GlobalState/store";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  increment,
-  decrement,
-  incrementByAmount,
-} from "@/app/GlobalState/Features/Counter/counterSlice";
+import { useDispatch } from "react-redux";
+import { navValue } from "@/app/GlobalState/Features/CanSkillNav/CanSkillNavSilce";
 
 const CanSkillNav = () => {
+  // 네비게이션 리스트
   const skillList = [
     { name: "Three.js", value: "three" },
     { name: "게시판 기능", value: "board" },
@@ -17,7 +13,6 @@ const CanSkillNav = () => {
     { name: "카카오맵활용", value: "kakao" },
   ];
 
-  const count = useSelector((state: RootState) => state.counterRudcer.vlaue);
   const dispatch = useDispatch();
 
   return (
@@ -35,38 +30,14 @@ const CanSkillNav = () => {
                 <a
                   key={idx}
                   onClick={() => {
-                    console.log(el.value + "클릭");
+                    dispatch(navValue(el.value));
                   }}
-                  href="#responsive-header"
-                  className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                  className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 cursor-pointer"
                 >
                   {el.name}
                 </a>
               );
             })}
-
-            <a
-              onClick={() => dispatch(increment())}
-              href="#responsive-header"
-              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-            >
-              리덕스 +
-            </a>
-            <a
-              onClick={() => dispatch(decrement())}
-              href="#responsive-header"
-              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-            >
-              리덕스 -
-            </a>
-            <a
-              onClick={() => dispatch(incrementByAmount(2))}
-              href="#responsive-header"
-              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-            >
-              어마운트 바이 2
-            </a>
-            {count}
           </div>
         </div>
       </nav>
