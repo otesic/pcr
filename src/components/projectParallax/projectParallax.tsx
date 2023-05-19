@@ -13,7 +13,7 @@ const Page = ({ offset, gradient, onClick }: PageProps) => (
   <>
     <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
       <div>
-        <img src="/1.png" />
+        <img src="/projectPpt/1.png" />
       </div>
     </ParallaxLayer>
 
@@ -35,7 +35,7 @@ const Page2 = ({ offset, gradient, onClick }: PageProps) => (
   <>
     <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
       <div>
-        <img src="/2.png" />
+        <img src="/projectPpt/2.png" />
       </div>
     </ParallaxLayer>
 
@@ -57,7 +57,7 @@ const Page3 = ({ offset, gradient, onClick }: PageProps) => (
   <>
     <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
       <div>
-        <img src="/3.png" />
+        <img src="/projectPpt/3.png" />
       </div>
     </ParallaxLayer>
 
@@ -78,7 +78,7 @@ const Page4 = ({ offset, gradient, onClick }: PageProps) => (
   <>
     <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
       <div>
-        <img src="/4.png" />
+        <img src="/projectPpt/4.png" />
       </div>
     </ParallaxLayer>
 
@@ -99,7 +99,7 @@ const Page5 = ({ offset, gradient, onClick }: PageProps) => (
   <>
     <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
       <div>
-        <img src="/5.png" />
+        <img src="/projectPpt/5.png" />
       </div>
     </ParallaxLayer>
 
@@ -120,7 +120,7 @@ const Page6 = ({ offset, gradient, onClick }: PageProps) => (
   <>
     <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
       <div>
-        <img src="/6.png" />
+        <img src="/projectPpt/6.png" />
       </div>
     </ParallaxLayer>
 

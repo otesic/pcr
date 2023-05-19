@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/openAi2/openAi2.jsx"
+    "src/components/openAi2/openAi2.jsx",
+    "src/components/canSkillBody/bodyDefault/test/tt.jsx"
   ],
   "exclude": ["node_modules"]
 }

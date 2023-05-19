@@ -1,11 +1,11 @@
 import React from "react";
-import NaviTest from "../../components/naviTest/NaviTest";
-import SpringTest from "../../components/TEST/ReactSpringTest/SpringTest";
+import ToroTest from "@/components/TESTcomponents/toroTest/toroTest";
 
 const page = () => {
   return (
     <div>
-      <h1>공부 내용 페이지</h1>
+      <h1>저는 이런 것들을 공부하고 있습니다.</h1>
+      <ToroTest />
       {/* <NaviTest></NaviTest> */}
       {/* <SpringTest></SpringTest> */}
     </div>

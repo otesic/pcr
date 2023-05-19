@@ -44,7 +44,10 @@ const ICONS = [
     name: "chatBot", // chat bot 아이콘
     url: "https://img.icons8.com/?size=512&id=103790&format=png",
   },
-  ,
+  {
+    name: "translate", // 번역 아이콘
+    url: "https://img.icons8.com/?size=512&id=a4DjxGAU8E5M&format=png",
+  },
 ];
 const MacDock = () => {
   // 리덕스 state로 OpenAI on off

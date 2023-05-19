@@ -26,14 +26,17 @@ const CanSkillBody = () => {
   }, []);
 
   return (
-    <div>
-      {nowNavValue == "" ? <BodyDefault /> : <></>}
-      {nowNavValue == "three" ? <Three /> : <></>}
-      {nowNavValue == "board" ? <Board /> : <></>}
-      {nowNavValue == "oauth" ? <OAuth /> : <></>}
-      {nowNavValue == "infinity" ? <Infinity /> : <></>}
-      {nowNavValue == "pdf" ? <Pdf /> : <></>}
-      {nowNavValue == "kakao" ? <Kakao /> : <></>}
+    <div className="relative z-0 bg-primary">
+      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+        {/* {nowNavValue == "" ? <BodyDefault /> : <></>} */}
+        {nowNavValue == "" ? <BodyDefault /> : <></>}
+        {nowNavValue == "three" ? <Three /> : <></>}
+        {nowNavValue == "board" ? <Board /> : <></>}
+        {nowNavValue == "oauth" ? <OAuth /> : <></>}
+        {nowNavValue == "infinity" ? <Infinity /> : <></>}
+        {nowNavValue == "pdf" ? <Pdf /> : <></>}
+        {nowNavValue == "kakao" ? <Kakao /> : <></>}
+      </div>
     </div>
   );
 };

@@ -127,6 +127,12 @@ export const DockCard = ({ children, src }: DockCardProps) => {
         dispatch(onChat(!onOff));
       }, 2000);
     }
+    // 번역기능 추가 작업 필요함 setTimeout 콜백으로 i18next 번역 기능 활성화 시키기
+    else if (src == "translate") {
+      setTimeout(() => {
+        console.log("번역 기능 활성화 되어야함");
+      }, 2000);
+    }
 
     if (!isAnimating.current) {
       isAnimating.current = true;
