@@ -8,6 +8,7 @@ import { DockDivider } from "@/components/macDock/dockDivider/dockDivider";
 import OpenAi from "../openAi/openAi";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/GlobalState/store";
+import ChatbotTest from "../TESTcomponents/openAiChatBotCssTest/testCss";
 
 const ICONS = [
   {
@@ -67,6 +68,7 @@ const MacDock = () => {
         )}
       </Dock>
       {onChat === true ? <OpenAi /> : <></>}
+      {/* {onChat === true ? <ChatbotTest /> : <></>} */}
     </div>
   );
 };

@@ -2,6 +2,7 @@
 
 # env파일 이그노어
 *.env
+.env.local
 
 # dependencies
 /node_modules

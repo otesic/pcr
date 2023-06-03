@@ -2,13 +2,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterRudcer from "./Features/Counter/counterSlice";
 import chatBotReducer from "./Features/ChatBot/chatSlice";
-import canSkillNavReduce from "./Features/CanSkillNav/CanSkillNavSilce";
+import canSkillNavReducer from "./Features/CanSkillNav/CanSkillNavSilce";
+import loginModalReducer from "./Features/LoginModal/LoginModalSlice";
 
 export const store = configureStore({
   reducer: {
     counterRudcer,
     chatBotReducer,
-    canSkillNavReduce,
+    canSkillNavReducer,
+    loginModalReducer,
   },
 });
 

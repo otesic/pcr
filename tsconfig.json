@@ -29,7 +29,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/openAi2/openAi2.jsx",
-    "src/components/canSkillBody/bodyDefault/test/tt.jsx"
+    "src/components/canSkillBody/bodyDefault/test/tt.jsx",
+    "util/database.ts"
   ],
   "exclude": ["node_modules"]
 }

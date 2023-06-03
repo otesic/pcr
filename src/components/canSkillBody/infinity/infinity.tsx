@@ -1,3 +1,6 @@
+import CanSkillNav from "@/components/canSkillNav/canSkillNav";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import { getServerSession } from "next-auth";
 import React from "react";
 
 const Infinity = () => {

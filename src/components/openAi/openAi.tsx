@@ -27,8 +27,9 @@ const OpenAi = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer " + "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",
+            Authorization: `Bearer ` + process.env.NEXT_PUBLIC_OPENAI_API_KEY2,
+            // Authorization:
+            // `Bearer ` + "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",
           },
         }
       );
@@ -68,30 +69,30 @@ const OpenAi = () => {
     }
   };
   return (
-    <div className="z-40 bg-white shadow-lg shadow-cyan-800 rounded-lg w-80 h-80 relative  overflow-y-auto m-auto">
-      <div className="text-center">ChatBot에게 질문해 보세요</div>
-      <div className="overflow-auto h-52">
+    <div className="z-40 bg-white shadow-lg shadow-cyan-800 rounded-lg w-96 h-96 relative mx-auto p-4 m-auto flex">
+      {/* <div className="text-center">ChatBot에게 질문해 보세요</div> */}
+      <div className="flex flex-col space-y-2 w-full relative pb-16 overflow-y-auto">
         {chat.map((el: any, idx: number) => (
           <React.Fragment key={idx}>
             {idx % 2 === 0 ? (
-              <div className="relative flex">
+              <div className="flex items-start">
                 {/* 유저 질문 */}
-                <div className="flex">
+                <div className="bg-blue-500 text-white p-2 rounded-md">
                   <img
                     className="w-5 h-5 flex-auto"
                     src="https://img.icons8.com/?size=512&id=21441&format=png"
                   />
-                  - {el.text}
+                  <span>{el.text}</span>
                 </div>
               </div>
             ) : (
-              <div className="relative flex">
-                <div className="flex">
+              <div className="flex items-end justify-end">
+                <div className="bg-gray-200 p-2 rounded-md">
                   <img
                     className="w-5 h-5"
                     src="https://img.icons8.com/?size=512&id=102886&format=png"
                   />
-                  - {el.text}
+                  <span>{el.text}</span>
                 </div>
               </div>
             )}
@@ -99,25 +100,9 @@ const OpenAi = () => {
         ))}
       </div>
 
-      <div
-        className=" p-3 
-        bg-component 
-        dark:bg-component-dark 
-        text-dark
-        dark:text-light
-        flex 
-        items-center
-        shadow-lg
-        rounded-lg
-        mt-7
-        absolute
-        inset-x-0
-        w-full
-        "
-      >
+      <div className="flex mt-4 bottom-0 absolute w-11/12 h-12 mb-4">
         <input
-          className="
-          bg-transparent outline-0 flex-1 px-3"
+          className="flex-grow rounded-l-lg border border-gray-300 px-4 py-2"
           onChange={questionsHandler}
           value={questions || ""}
           onKeyDown={onKeyPress}
@@ -127,7 +112,7 @@ const OpenAi = () => {
 
         {waitAnswer ? (
           <button
-            className="bg-primary px-3 py-1.5 text-lg text-light rounded-lg"
+            className="bg-white hover:white text-white rounded-r-lg px-4 py-2"
             type="submit"
             onClick={submitQuestion}
             disabled={waitAnswer}
@@ -136,7 +121,7 @@ const OpenAi = () => {
           </button>
         ) : (
           <button
-            className="bg-primary px-3 py-1.5 text-lg text-light rounded-lg"
+            className="bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg px-4 py-2"
             type="submit"
             onClick={submitQuestion}
             disabled={waitAnswer}
