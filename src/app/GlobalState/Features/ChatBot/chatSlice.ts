@@ -1,11 +1,11 @@
 "use client";
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface CounterState {
+export interface ChatBotState {
   vlaue: boolean;
 }
 
-const initialState: CounterState = {
+const initialState: ChatBotState = {
   vlaue: false,
 };
 

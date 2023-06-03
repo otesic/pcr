@@ -4,6 +4,7 @@ import counterRudcer from "./Features/Counter/counterSlice";
 import chatBotReducer from "./Features/ChatBot/chatSlice";
 import canSkillNavReducer from "./Features/CanSkillNav/CanSkillNavSilce";
 import loginModalReducer from "./Features/LoginModal/LoginModalSlice";
+import kakaoReducer from "./Features/Kakao/kakaoSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     chatBotReducer,
     canSkillNavReducer,
     loginModalReducer,
+    kakaoReducer,
   },
 });
 
