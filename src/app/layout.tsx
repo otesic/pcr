@@ -5,10 +5,13 @@ import { Providers } from "./GlobalState/provider";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { SessionProvider } from "next-auth/react";
 import Script from "next/script";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 // export const metadata = {
 //   title: "박철련 포트폴리오",
 // };
+
+const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
@@ -24,12 +27,14 @@ export default function RootLayout({
           src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY}&libraries=services,clusterer&autoload=false`}
           strategy="beforeInteractive"
         />
-        <SessionProvider>
-          <Providers>
-            <ParallaxProvider>{children}</ParallaxProvider>
-            <MacDock />
-          </Providers>
-        </SessionProvider>
+        <QueryClientProvider client={queryClient}>
+          <SessionProvider>
+            <Providers>
+              <ParallaxProvider>{children}</ParallaxProvider>
+              <MacDock />
+            </Providers>
+          </SessionProvider>
+        </QueryClientProvider>
       </body>
     </html>
   );

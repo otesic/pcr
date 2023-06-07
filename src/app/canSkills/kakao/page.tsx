@@ -10,11 +10,12 @@ const page = async () => {
   let user = loginSessionValue?.user?.name;
 
   const db = (await connectDB).db("forum");
-  let result = await db.collection("provideList").find().toArray();
+  let result = await db.collection("provideList").find().limit(5).toArray();
   result = result.map((a: any) => {
     a._id = a._id.toString();
     return a;
   });
+  // console.log(result);
 
   return (
     <>

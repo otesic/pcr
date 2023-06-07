@@ -30,7 +30,8 @@
     ".next/types/**/*.ts",
     "src/components/openAi2/openAi2.jsx",
     "src/components/canSkillBody/bodyDefault/test/tt.jsx",
-    "util/database.ts"
+    "util/database.ts",
+    "src/components/canSkillBody/infinity/hookTest.js"
   ],
   "exclude": ["node_modules"]
 }

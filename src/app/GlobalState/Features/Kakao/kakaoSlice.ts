@@ -6,7 +6,7 @@ export interface KaKaoState {
 }
 
 const initialState: KaKaoState = {
-  vlaue: [{ lat: "", lng: "" }],
+  vlaue: [],
 };
 
 export const kakaoSlice = createSlice({
@@ -14,7 +14,10 @@ export const kakaoSlice = createSlice({
   initialState,
   reducers: {
     setKakao: (state, action) => {
-      state.vlaue = { lat: action.payload, lng: action.payload };
+      state.vlaue = [
+        ...state.vlaue,
+        { lat: action.payload[0].lat, lng: action.payload[0].lng },
+      ];
     },
   },
 });
