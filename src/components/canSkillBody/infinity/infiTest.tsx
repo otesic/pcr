@@ -1,7 +1,7 @@
 "use client";
 import listHandler from "@/pages/api/kakao/list";
 import React from "react";
-
+import { Button } from "@material-tailwind/react";
 const InfiTest = () => {
   const test = () => {
     console.log("클릭");
@@ -10,9 +10,10 @@ const InfiTest = () => {
   };
   return (
     <div>
-      <button className="bg-red-300" onClick={test}>
+      <Button>button</Button>
+      {/* <button className="bg-red-300" onClick={test}>
         데이터 요청
-      </button>
+      </button> */}
     </div>
   );
 };

@@ -6,6 +6,7 @@ import React from "react";
 import { connectDB } from "../../../../util/database";
 import InfiTest from "@/components/canSkillBody/infinity/infiTest";
 import Pokemon from "@/components/canSkillBody/infinity/pokemon";
+import Example from "@/components/canSkillBody/infinity/example";
 
 const page = async () => {
   let loginSessionValue: any = await getServerSession(authOptions);
@@ -15,8 +16,9 @@ const page = async () => {
     <>
       <CanSkillNav sessionValue={user} />
       {/* <Infinity /> */}
-      <InfiTest />
+      {/* <InfiTest /> */}
       {/* <Pokemon /> */}
+      <Example />
     </>
   );
 };

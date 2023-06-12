@@ -6,7 +6,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { SessionProvider } from "next-auth/react";
 import Script from "next/script";
 import { QueryClient, QueryClientProvider } from "react-query";
-
+import { ThemeProvider } from "@material-tailwind/react";
 // export const metadata = {
 //   title: "박철련 포트폴리오",
 // };
@@ -29,10 +29,12 @@ export default function RootLayout({
         />
         <QueryClientProvider client={queryClient}>
           <SessionProvider>
-            <Providers>
-              <ParallaxProvider>{children}</ParallaxProvider>
-              <MacDock />
-            </Providers>
+            <ThemeProvider>
+              <Providers>
+                <ParallaxProvider>{children}</ParallaxProvider>
+                <MacDock />
+              </Providers>
+            </ThemeProvider>
           </SessionProvider>
         </QueryClientProvider>
       </body>

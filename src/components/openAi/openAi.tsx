@@ -28,8 +28,6 @@ const OpenAi = () => {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ` + process.env.NEXT_PUBLIC_OPENAI_API_KEY2,
-            // Authorization:
-            // `Bearer ` + "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",
           },
         }
       );
@@ -69,17 +67,17 @@ const OpenAi = () => {
     }
   };
   return (
-    <div className="z-40 bg-white shadow-lg shadow-cyan-800 rounded-lg w-96 h-96 relative mx-auto p-4 m-auto flex">
+    <div className="relative z-40 m-auto mx-auto flex h-96 w-96 rounded-lg bg-white p-4 shadow-lg shadow-cyan-800">
       {/* <div className="text-center">ChatBot에게 질문해 보세요</div> */}
-      <div className="flex flex-col space-y-2 w-full relative pb-16 overflow-y-auto">
+      <div className="relative flex w-full flex-col space-y-2 overflow-y-auto pb-16">
         {chat.map((el: any, idx: number) => (
           <React.Fragment key={idx}>
             {idx % 2 === 0 ? (
               <div className="flex items-start">
                 {/* 유저 질문 */}
-                <div className="bg-blue-500 text-white p-2 rounded-md">
+                <div className="rounded-md bg-blue-500 p-2 text-white">
                   <img
-                    className="w-5 h-5 flex-auto"
+                    className="h-5 w-5 flex-auto"
                     src="https://img.icons8.com/?size=512&id=21441&format=png"
                   />
                   <span>{el.text}</span>
@@ -87,9 +85,9 @@ const OpenAi = () => {
               </div>
             ) : (
               <div className="flex items-end justify-end">
-                <div className="bg-gray-200 p-2 rounded-md">
+                <div className="rounded-md bg-gray-200 p-2">
                   <img
-                    className="w-5 h-5"
+                    className="h-5 w-5"
                     src="https://img.icons8.com/?size=512&id=102886&format=png"
                   />
                   <span>{el.text}</span>
@@ -100,7 +98,7 @@ const OpenAi = () => {
         ))}
       </div>
 
-      <div className="flex mt-4 bottom-0 absolute w-11/12 h-12 mb-4">
+      <div className="absolute bottom-0 mb-4 mt-4 flex h-12 w-11/12">
         <input
           className="flex-grow rounded-l-lg border border-gray-300 px-4 py-2"
           onChange={questionsHandler}
@@ -112,22 +110,22 @@ const OpenAi = () => {
 
         {waitAnswer ? (
           <button
-            className="bg-white hover:white text-white rounded-r-lg px-4 py-2"
+            className="hover:white rounded-r-lg bg-white px-4 py-2 text-white"
             type="submit"
             onClick={submitQuestion}
             disabled={waitAnswer}
           >
-            <img className="w-8 h-8 bg-white" src="/spinner2.gif" />
+            <img className="h-8 w-8 bg-white" src="/spinner2.gif" />
           </button>
         ) : (
           <button
-            className="bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg px-4 py-2"
+            className="rounded-r-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
             type="submit"
             onClick={submitQuestion}
             disabled={waitAnswer}
           >
             <img
-              className="w-8 h-8 "
+              className="h-8 w-8 "
               src="	https://img.icons8.com/?size=512&id=43190&format=png"
             />
           </button>

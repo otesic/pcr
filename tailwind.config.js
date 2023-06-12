@@ -1,4 +1,21 @@
 /** @type {import('tailwindcss').Config} */
+
+// const withMT = require("@material-tailwind/react/utils/withMT");
+
+// module.exports = withMT({
+//   content: [
+//     "./pages/**/*.{js,ts,jsx,tsx}",
+//     "./src/components/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+//     "./src/app/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+//     "./src/components/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
+//     "./src/app/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
+//   ],
+//   theme: {
+//     extend: {},
+//   },
+//   plugins: [],
+// });
+
 module.exports = {
   darkMode: "class",
   content: [
